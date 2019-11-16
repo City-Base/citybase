@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="$(AspNetCoreAppRuntimeFrameworkVersion)">
+      <IsImplicitlyDefined>true</IsImplicitlyDefined>
+      <PrivateAssets>All</PrivateAssets>
+      <Publish>true</Publish>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="CityBaseShared\obj\CityBaseShared.csproj.nuget.cache" />
+    <None Remove="CityBaseShared\obj\Debug\netcoreapp2.1\CityBaseShared.csprojAssemblyReference.cache" />
+    <None Remove="CityBaseShared\obj\Debug\netcoreapp2.1\CityBaseShared.RazorAssemblyInfo.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="CityBaseShared\Program.cs" />
+    <Compile Remove="CityBaseShared\Startup.cs" />
+    <Compile Remove="CityBaseShared\obj\Debug\netcoreapp2.1\CityBaseShared.RazorAssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="CityBaseShared\Properties\launchSettings.json" />
+    <Content Remove="CityBaseShared\obj\project.assets.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CityBaseBusiness\test\CityBaseBusiness.csproj" />
+    <ProjectReference Include="..\CityBaseShared\CityBase\CityBaseShared.csproj" />
+  </ItemGroup>
+</Project>
