@@ -1,0 +1,134 @@
+.navbar {
+  margin-bottom: 0;
+  background-color: #f4511e;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+  color: #fff !important;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: #f4511e !important;
+  background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #fff !important;
+}
+
+.jumbotron {
+    background: url("/assets/images/citybase-bg.jpg") no-repeat;
+    background-size: 100% auto;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+    border-radius: 0px;
+    min-height: 360px;
+    -webkit-box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+}
+
+.title-name {
+    letter-spacing: 10px;
+    margin-top: 45px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.navbar-fixed-bottom, .navbar-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background: transparent;
+}
+
+.input-group {
+    position: absolute;
+    display: block;
+    width: 50%;
+    top: 128px;
+    left: 25%;
+}
+
+.btn-primary.btn-cb {
+    width: 70px;
+    background: #cc0e00;
+    border-color: #cc0e00;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.input-country {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.input-state {
+    border-radius: 0px;
+}
+
+.home-container {
+    max-width: 1140px;
+    text-align: center;
+    padding-top: 40px;
+    color: #FFFFFF;
+}
+
+@media screen and (min-width: 768px) {
+    .navbar-toggle {
+        display: none;
+    }
+    .navbar-collapse.collapse {
+        display: block!important;
+        height: auto!important;
+        padding-bottom: 0;
+        overflow: visible!important;
+    }
+    .navbar-collapse {
+        width: auto;
+        border-top: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        flex-basis: unset;
+    }
+    .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse, .navbar-static-top .navbar-collapse {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .navbar-nav>li {
+        float: left;
+        margin-top: 15px;
+    }
+    .navbar-right {
+        float: right!important;
+        margin-right: -15px;
+    }
+    .navbar-nav>li>a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .nav>li>a {
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+    }
+    .navbar-nav {
+        flex-direction: row;
+    }
+}
