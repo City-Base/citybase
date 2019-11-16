@@ -4,5 +4,6 @@ export const apiUrl = {
     "baseUrl":"/api",
 
 
-    "getCountry": "/countries"
+    "getCountry": "/countries",
+    "getStates": "/states"
 }
