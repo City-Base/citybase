@@ -1,45 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using CityBaseData.DataAccessComponents;
 using CityBaseShared.DataTransferObjects;
 namespace CityBaseBusiness.BusinessDomainComponents
 {
     public class CountriesBDC
     {
+
+        public CountriesData CountriesData { get; set; }
         public CountriesBDC()
         {
+            CountriesData = new CountriesData();
         }
 
         //Get list of all countries
-        public IEnumerable<CountryDTO> Get()
+        public IList<CountryDTO> Get()
         {
-            IList<CountryDTO> countries = new List<CountryDTO>();
-            for(var i = 0; i<=5; i++)
-            {
-                var country = new CountryDTO {
-                    CountryId = i,
-                    CountryName = "Country" + i
-                };
-                countries.Add(country);
-            }
-            return countries;
+            
+            return CountriesData.Get();
 
         }
 
         //Get list of all states using a countryId
-        public IEnumerable<StateDTO> Get(int countryId)
+        public IList<StateDTO> Get(int countryId)
         {
-            IList<StateDTO> states = new List<StateDTO>();
-            for (var i = 0; i <= 5; i++)
-            {
-                var state = new StateDTO {
-                    StateId = i,
-                    CountryId = countryId,
-                    StateName = "State" + i
-                };
-                states.Add(state);
-            }
-            return states;
-
+            return CountriesData.Get(countryId);
         }
     }
 }

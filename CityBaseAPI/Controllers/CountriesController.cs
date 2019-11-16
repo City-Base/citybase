@@ -12,21 +12,26 @@ namespace CityBaseAPI.Controllers
     [ApiController]
     public class CountriesController : ControllerBase
     {
+        public CountriesController()
+        {
+            this.countriesBDC = new CountriesBDC();
+        }
+
+        public CountriesBDC countriesBDC { get; set; }
+
         // GET api/countries
         [HttpGet]
-        public ActionResult<IEnumerable<CountryDTO>> Get()
+        public ActionResult<IList<CountryDTO>> Get()
         {
-            var countriesBusiness = new CountriesBDC();
-            var result = new ActionResult<IEnumerable<CountryDTO>>(countriesBusiness.Get());
+            var result = new ActionResult<IList<CountryDTO>>(countriesBDC.Get());
             return result;
         }
 
         // GET api/countries/5
         [HttpGet("{countryId}")]
-        public ActionResult<IEnumerable<StateDTO>> Get(int countryId)
+        public ActionResult<IList<StateDTO>> Get(int countryId)
         {
-            var countriesBusiness = new CountriesBDC();
-            var result = new ActionResult<IEnumerable<StateDTO>>(countriesBusiness.Get(countryId));
+            var result = new ActionResult<IList<StateDTO>>(countriesBDC.Get(countryId));
             return result;
         }
 
