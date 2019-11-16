@@ -5,5 +5,5 @@ export const apiUrl = {
 
 
     "getCountry": "/countries",
-    "getStates": "/states"
+    "getStates": "/countries/"+localStorage.getItem("countryId")
 }

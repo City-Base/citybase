@@ -1,6 +1,6 @@
 export interface States {
-  country?: string;
-  state?: string;
+  country?: number;
+  state?: number;
   monthFrom?: number;
   monthTo?: number;
   cost?: number;

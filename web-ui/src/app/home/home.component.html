@@ -4,7 +4,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-                <span class="icon-bar"></span>                        
+                <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#myPage"><img src="assets/images/citybase-white.png" width="180"></a>
         </div>
@@ -18,21 +18,26 @@
 </nav>
 <div class="jumbotron text-center">
     <h1 class="title-name">CITYBASE</h1>
-    <div class="row">
-        <div class="col-12 text-center">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend mx-auto">
-                    <select name="Country" class="custom-select input-country">
-                        <option selected>Select Country</option>
-                    </select>
-                    <select name="State" class="custom-select input-state">
-                        <option selected>Select State</option>
-                    </select>
-                    <button class="btn btn-primary btn-cb">GO</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <form [formGroup]="searchForm">
+        <!-- <form [formGroup]="searchForm" (submit)="goLocation()"> -->
+      <div class="row">
+          <div class="col-12 text-center">
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend mx-auto">
+                      <select formControlName="country" name="Country" (change)="getCountry($event.target.value)" class="custom-select input-country">
+                          <option [selected]>Select Country</option>
+                          <option *ngFor="let cntries of countries" [value]="cntries.countryId">{{cntries.countryName}}</option>
+                      </select>
+                      <select formControlName="state" name="State" (change)="getStates($event.target.value)" class="custom-select input-state">
+                          <option [selected]>Select State</option>
+                          <option *ngFor="let sts of states" [value]="sts.stateId">{{sts.stateName}}</option>
+                      </select>
+                      <button class="btn btn-primary btn-cb">GO</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </form>
 </div>
 <div class="container-fluid home-container">
     <div class="row">

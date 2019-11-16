@@ -14,7 +14,7 @@ export class HomeService {
       return this.http.get(apiUrl.baseUrl+apiUrl.getCountry);
   }
 
-  getStates(states: States){
-      return this.http.post(apiUrl.baseUrl+apiUrl.getStates, states);
+  getStates(){
+      return this.http.get(apiUrl.baseUrl+apiUrl.getStates);
   }
 }
